@@ -337,6 +337,8 @@ body {
     margin-bottom: 2rem;
     color: var(--bg-light);
     max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- Pillars Section --- */
@@ -478,6 +480,10 @@ body {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px var(--shadow);
+}
+
+.community-card.partners {
+    grid-column: 1 / -1;
 }
 
 .community-card h4 {
