@@ -1,113 +1,56 @@
-// Wait for the DOM to be fully loaded before running the script
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Ensure Three.js is loaded
-    if (typeof THREE === 'undefined') {
-        console.error('Three.js has not been loaded.');
-        return;
-    }
-
     const container = document.getElementById('hero-canvas');
+    if (!container) return;
 
-    // Only run the script if the container element exists on the page
-    if (container) {
-        // 1. Scene Setup
-        const scene = new THREE.Scene();
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: container, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
 
-        // 2. Camera
-        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-        camera.position.z = 20;
+    const geometry = new THREE.PlaneGeometry(20, 20, 50, 50);
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x4CA771, // SELYN green
+        wireframe: true
+    });
+    const plane = new THREE.Mesh(geometry, material);
+    scene.add(plane);
 
-        // 3. Renderer
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        container.appendChild(renderer.domElement);
+    camera.position.z = 5;
 
-        // 4. Lighting
-        const pointLight = new THREE.PointLight(0x4CA771, 500, 100); // Primary green light
-        pointLight.position.set(10, 10, 10);
-        scene.add(pointLight);
+    const light = new THREE.PointLight(0xC0E6BA, 1, 100);
+    light.position.set(10, 10, 10);
+    scene.add(light);
 
-        const ambientLight = new THREE.AmbientLight(0xEAF9E7, 0.5); // Soft background light
-        scene.add(ambientLight);
+    let clock = new THREE.Clock();
 
-        // 5. Objects
-        const objectsGroup = new THREE.Group();
-        const geometry = new THREE.IcosahedronGeometry(6, 1); // A more detailed shape
-        const material = new THREE.MeshStandardMaterial({
-            color: 0xC0E6BA, // Soft secondary color
-            wireframe: true,
-            roughness: 0.5,
-            metalness: 0.1,
-            transparent: true,
-            opacity: 0.7
-        });
+    function animate() {
+        requestAnimationFrame(animate);
 
-        const mainObject = new THREE.Mesh(geometry, material);
-        objectsGroup.add(mainObject);
-
-        // Add smaller floating particles for a "starfield" effect
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCnt = 500;
-        const posArray = new Float32Array(particlesCnt * 3);
-
-        for(let i = 0; i < particlesCnt * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 50;
+        // Animate vertices to create a wave effect
+        const t = clock.getElapsedTime();
+        const positions = plane.geometry.attributes.position;
+        for (let i = 0; i < positions.count; i++) {
+            const y = positions.getY(i);
+            const x = positions.getX(i);
+            const waveX = Math.sin(x * 0.5 + t) * 0.5;
+            const waveY = Math.sin(y * 0.5 + t) * 0.5;
+            positions.setZ(i, waveX + waveY);
         }
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        positions.needsUpdate = true;
 
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.025,
-            color: 0xEAF9E7
-        });
-        const particleMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particleMesh);
+        plane.rotation.x += 0.001;
+        plane.rotation.y += 0.001;
 
-
-        scene.add(objectsGroup);
-
-        // 6. Mouse Interaction
-        let mouse = new THREE.Vector2();
-        document.addEventListener('mousemove', (event) => {
-            // Normalize mouse position from -1 to 1
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-        }, false);
-
-        // 7. Animation Loop
-        const clock = new THREE.Clock();
-        const animate = () => {
-            const elapsedTime = clock.getElapsedTime();
-
-            requestAnimationFrame(animate);
-
-            // Animate objects
-            mainObject.rotation.y = .2 * elapsedTime;
-            mainObject.rotation.x = .1 * elapsedTime;
-
-            // Animate particles
-            particleMesh.rotation.y = -.05 * elapsedTime;
-
-            // Subtle mouse-based camera movement
-            camera.position.x += (mouse.x * 5 - camera.position.x) * .05;
-            camera.position.y += (mouse.y * 5 - camera.position.y) * .05;
-            camera.lookAt(scene.position);
-
-            renderer.render(scene, camera);
-        };
-
-        // 8. Handle Window Resize
-        const onWindowResize = () => {
-            if (container.clientWidth > 0 && container.clientHeight > 0) {
-                camera.aspect = container.clientWidth / container.clientHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(container.clientWidth, container.clientHeight);
-            }
-        };
-
-        window.addEventListener('resize', onWindowResize);
-
-        // Start animation
-        animate();
+        renderer.render(scene, camera);
     }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+    });
 });

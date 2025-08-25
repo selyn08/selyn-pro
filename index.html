@@ -4,39 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SELYN Business Center - Accueil</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js" integrity="sha512-x9zW3jVb+VBLs92t2/2p/BOc9d3w3zVbS/3Db1LJqE7S86mB5uBw9y+x/yCC3rQ1P9Rj6gI55TwV/w/lLcO+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-
-    <div id="page-wrapper" class="page-wrapper">
-        <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
-        <aside class="sidebar" id="sidebar">
-            <div class="logo">
-                <a href="index.html">SELYN</a>
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="site-logo">
+            <a href="index.html"><img src="assets/logo.svg" alt="SELYN Logo" class="site-logo-img" style="height: 40px; width: auto;"></a>
             </div>
-            <nav>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="consulting.html">Conseil</a></li>
-                    <li><a href="hub.html">Hub</a></li>
-                    <li><a href="coworking.html">Space</a></li>
-                    <li><a href="offres.html">Offres</a></li>
-                    <li><a href="communaute.html">Communauté</a></li>
-                    <li><a href="a-propos.html">À Propos</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html"><i class="nav-icon">A</i><span class="nav-text">Accueil</span></a></li>
+                    <li><a href="consulting.html"><i class="nav-icon">C</i><span class="nav-text">Conseil</span></a></li>
+                    <li><a href="hub.html"><i class="nav-icon">H</i><span class="nav-text">Hub</span></a></li>
+                    <li><a href="coworking.html"><i class="nav-icon">S</i><span class="nav-text">Space</span></a></li>
+                    <li><a href="offres.html"><i class="nav-icon">O</i><span class="nav-text">Offres</span></a></li>
+                    <li><a href="communaute.html"><i class="nav-icon">C</i><span class="nav-text">Communauté</span></a></li>
+                    <li><a href="a-propos.html"><i class="nav-icon">A</i><span class="nav-text">À Propos</span></a></li>
+                    <li><a href="contact.html"><i class="nav-icon">C</i><span class="nav-text">Contact</span></a></li>
                 </ul>
             </nav>
-            <div class="sidebar-footer">
-                <p>&copy; 2024 SELYN</p>
+            <div class="nav-controls">
+                <button id="layout-toggle" title="Changer la disposition">V</button>
             </div>
-        </aside>
+        </div>
+    </header>
 
+    <div class="page-wrapper" id="page-wrapper">
         <main class="main-content">
             <!-- Hero Section -->
             <section id="hero" class="hero-section">
@@ -194,6 +190,6 @@
     </div>
 
     <script src="js/main.js"></script>
-    <script src="js/hero-animation.js"></script>
+    <script type="module" src="js/hero-animation.js"></script>
 </body>
 </html>

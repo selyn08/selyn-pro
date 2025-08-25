@@ -7,27 +7,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="page-wrapper" class="page-wrapper">
-        <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </button>
-        <aside class="sidebar" id="sidebar">
-            <div class="logo"><a href="index.html">SELYN</a></div>
-            <nav>
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="site-logo">
+                <a href="index.html">SELYN</a>
+            </div>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="consulting.html">Conseil</a></li>
-                    <li><a href="hub.html">Hub</a></li>
-                    <li><a href="coworking.html">Space</a></li>
-                    <li><a href="offres.html">Offres</a></li>
-                    <li><a href="communaute.html">Communauté</a></li>
-                    <li><a href="a-propos.html">À Propos</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html"><i class="nav-icon">A</i><span class="nav-text">Accueil</span></a></li>
+                    <li><a href="consulting.html"><i class="nav-icon">C</i><span class="nav-text">Conseil</span></a></li>
+                    <li><a href="hub.html"><i class="nav-icon">H</i><span class="nav-text">Hub</span></a></li>
+                    <li><a href="coworking.html"><i class="nav-icon">S</i><span class="nav-text">Space</span></a></li>
+                    <li><a href="offres.html"><i class="nav-icon">O</i><span class="nav-text">Offres</span></a></li>
+                    <li><a href="communaute.html"><i class="nav-icon">C</i><span class="nav-text">Communauté</span></a></li>
+                    <li><a href="a-propos.html"><i class="nav-icon">A</i><span class="nav-text">À Propos</span></a></li>
+                    <li><a href="contact.html"><i class="nav-icon">C</i><span class="nav-text">Contact</span></a></li>
                 </ul>
             </nav>
-            <div class="sidebar-footer"><p>&copy; 2024 SELYN</p></div>
-        </aside>
+            <div class="nav-controls">
+                <button id="layout-toggle" title="Changer la disposition">V</button>
+            </div>
+        </div>
+    </header>
 
+    <div class="page-wrapper" id="page-wrapper">
         <main class="main-content">
             <!-- Page Header -->
             <header class="page-header">
