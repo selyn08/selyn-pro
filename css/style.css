@@ -150,20 +150,23 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     font-weight: 500;
     color: var(--dark-accent);
+    position: relative;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .main-nav a:hover {
     background-color: var(--bg-light);
+    transform: translateY(-2px);
 }
 
 .main-nav .nav-icon {
-    font-style: normal;
-    font-weight: bold;
-    width: 20px;
+    display: none; /* Hide icons on desktop by default */
+    font-size: 1.5rem;
+    width: 30px;
     text-align: center;
     flex-shrink: 0;
 }
@@ -206,6 +209,11 @@ body {
 
     .main-nav a {
         justify-content: center;
+        padding: 1rem; /* Larger touch target */
+    }
+
+    .main-nav .nav-icon {
+        display: block; /* Show icons on mobile */
     }
 
     .nav-text {
