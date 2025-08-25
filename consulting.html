@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SELYN Conseil - Accompagnement Stratégique</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="nav-container">
             <div class="site-logo">
-                <a href="index.html">SELYN</a>
+                <a href="index.html"><img src="assets/logo.svg" alt="SELYN Logo" class="site-logo-img" style="height: 40px; width: auto;"></a>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html"><i class="nav-icon">A</i><span class="nav-text">Accueil</span></a></li>
-                    <li><a href="consulting.html"><i class="nav-icon">C</i><span class="nav-text">Conseil</span></a></li>
-                    <li><a href="hub.html"><i class="nav-icon">H</i><span class="nav-text">Hub</span></a></li>
-                    <li><a href="coworking.html"><i class="nav-icon">S</i><span class="nav-text">Space</span></a></li>
-                    <li><a href="offres.html"><i class="nav-icon">O</i><span class="nav-text">Offres</span></a></li>
-                    <li><a href="communaute.html"><i class="nav-icon">C</i><span class="nav-text">Communauté</span></a></li>
-                    <li><a href="a-propos.html"><i class="nav-icon">A</i><span class="nav-text">À Propos</span></a></li>
-                    <li><a href="contact.html"><i class="nav-icon">C</i><span class="nav-text">Contact</span></a></li>
+                    <li><a href="index.html"><i class="nav-icon fa-solid fa-house"></i><span class="nav-text">Accueil</span></a></li>
+                    <li><a href="consulting.html"><i class="nav-icon fa-solid fa-briefcase"></i><span class="nav-text">Conseil</span></a></li>
+                    <li><a href="hub.html"><i class="nav-icon fa-solid fa-server"></i><span class="nav-text">Hub</span></a></li>
+                    <li><a href="coworking.html"><i class="nav-icon fa-solid fa-building"></i><span class="nav-text">Space</span></a></li>
+                    <li><a href="offres.html"><i class="nav-icon fa-solid fa-tags"></i><span class="nav-text">Offres</span></a></li>
+                    <li><a href="communaute.html"><i class="nav-icon fa-solid fa-users"></i><span class="nav-text">Communauté</span></a></li>
+                    <li><a href="a-propos.html"><i class="nav-icon fa-solid fa-circle-info"></i><span class="nav-text">À Propos</span></a></li>
+                    <li><a href="contact.html"><i class="nav-icon fa-solid fa-envelope"></i><span class="nav-text">Contact</span></a></li>
                 </ul>
             </nav>
-            <div class="nav-controls">
-                <button id="layout-toggle" title="Changer la disposition">V</button>
-            </div>
         </div>
     </header>
 
@@ -100,8 +99,7 @@
             <footer class="site-footer">
                 <div class="footer-container">
                     <div class="footer-column">
-                        <h4>SELYN Business Center</h4>
-                        <p>Une transformation globale pour un succès durable.</p>
+                        <canvas id="footer-logo-canvas" style="width: 100px; height: 100px;"></canvas>
                     </div>
                     <div class="footer-column">
                         <h4>Navigation</h4>
@@ -135,5 +133,6 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script type="module" src="js/footer-animation.js"></script>
 </body>
 </html>
