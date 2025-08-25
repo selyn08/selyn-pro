@@ -489,6 +489,7 @@ body {
 .community-card h4 {
     color: var(--primary-green);
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .testimonials blockquote {
