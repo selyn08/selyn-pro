@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELYN Business Center - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js" integrity="sha512-x9zW3jVb+VBLs92t2/2p/BOc9d3w3zVbS/3Db1LJqE7S86mB5uBw9y+x/yCC3rQ1P9Rj6gI55TwV/w/lLcO+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <div id="page-wrapper" class="page-wrapper">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <a href="index.html">SELYN</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="consulting.html">Conseil</a></li>
+                    <li><a href="hub.html">Hub</a></li>
+                    <li><a href="coworking.html">Space</a></li>
+                    <li><a href="offres.html">Offres</a></li>
+                    <li><a href="communaute.html">Communauté</a></li>
+                    <li><a href="a-propos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>&copy; 2024 SELYN</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="hero" class="hero-section">
+                <div id="hero-canvas" class="hero-canvas"></div>
+                <div class="hero-content">
+                    <h1 class="hero-headline">Une transformation globale…</h1>
+                    <p class="hero-subtitle">Découvrez un écosystème connecté pour accélérer votre croissance.</p>
+                    <a href="#pillars" class="btn">Explorer nos piliers</a>
+                </div>
+            </section>
+
+            <!-- Pillars Carousel Section -->
+            <section id="pillars" class="pillars-section container">
+                <h2 class="section-title">Nos Piliers de Service</h2>
+                <div class="pillars-carousel">
+                    <div class="pillar-card">
+                        <img src="assets/conseil-icon.png" alt="Icone Conseil" class="pillar-icon" style="width: 80px; height: 80px; background-color: #ccc; border-radius: 50%; margin: 0 auto 1rem;">
+                        <h3>SELYN Conseil</h3>
+                        <p>Un accompagnement stratégique sur-mesure pour piloter votre performance et structurer votre développement.</p>
+                        <a href="consulting.html" class="btn-secondary">En savoir plus</a>
+                    </div>
+                    <div class="pillar-card">
+                        <img src="assets/hub-icon.png" alt="Icone Hub" class="pillar-icon" style="width: 80px; height: 80px; background-color: #ccc; border-radius: 50%; margin: 0 auto 1rem;">
+                        <h3>SELYN Hub</h3>
+                        <p>Votre centre de commandement digital et physique, alliant une super-app de gestion et des espaces de travail modernes.</p>
+                        <a href="hub.html" class="btn-secondary">En savoir plus</a>
+                    </div>
+                    <div class="pillar-card">
+                        <img src="assets/space-icon.png" alt="Icone Space" class="pillar-icon" style="width: 80px; height: 80px; background-color: #ccc; border-radius: 50%; margin: 0 auto 1rem;">
+                        <h3>SELYN Space</h3>
+                        <p>Plus qu'un bureau, une communauté. Des espaces de coworking inspirants pour travailler et réseauter.</p>
+                        <a href="coworking.html" class="btn-secondary">En savoir plus</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="pricing-section">
+                <div class="container">
+                    <h2 class="section-title">Des offres adaptées à votre croissance</h2>
+                    <div class="pricing-grid">
+                        <div class="pricing-tier">
+                            <h3>Panier 0</h3>
+                            <p class="price">Gratuit</p>
+                            <p class="tier-desc">Découvrez notre écosystème.</p>
+                            <ul>
+                                <li>Accès à la communauté</li>
+                                <li>Newsletter exclusive</li>
+                                <li>Invitation aux événements publics</li>
+                            </ul>
+                            <a href="offres.html?offer=0" class="btn">Commencer</a>
+                        </div>
+                        <div class="pricing-tier popular">
+                            <span class="popular-badge">Populaire</span>
+                            <h3>Panier 1</h3>
+                            <p class="price">49€ <span class="period">/mois</span></p>
+                            <p class="tier-desc">Pour les indépendants et startups.</p>
+                            <ul>
+                                <li>Tous les avantages du Panier 0</li>
+                                <li>Accès à la Super App (modules de base)</li>
+                                <li>Poste nomade 2 jours/semaine</li>
+                            </ul>
+                            <a href="offres.html?offer=1" class="btn">Choisir cette offre</a>
+                        </div>
+                        <div class="pricing-tier">
+                            <h3>Panier 2</h3>
+                            <p class="price">Sur Devis</p>
+                            <p class="tier-desc">La solution complète pour les PME.</p>
+                            <ul>
+                                <li>Tous les avantages du Panier 1</li>
+                                <li>Accès complet à la Super App</li>
+                                <li>Bureau privatif ou abonnement complet</li>
+                                <li>Accompagnement Conseil personnalisé</li>
+                            </ul>
+                            <a href="offres.html?offer=2" class="btn">Nous contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Section -->
+            <section id="community" class="community-section container">
+                <h2 class="section-title">Rejoignez une Communauté d'Ambition</h2>
+                <div class="community-grid">
+                    <div class="community-card testimonials">
+                        <h4>Ce qu'ils disent de nous</h4>
+                        <blockquote>
+                            <p>"SELYN a transformé notre approche business. L'accompagnement est concret et les outils sont puissants."</p>
+                            <footer>- Alice D., CEO de TechUp</footer>
+                        </blockquote>
+                    </div>
+                    <div class="community-card newsletter">
+                        <h4>Restez Connecté</h4>
+                        <p>Abonnez-vous à notre newsletter pour recevoir nos dernières actualités et conseils.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Votre email" required>
+                            <button type="submit" class="btn">S'inscrire</button>
+                        </form>
+                    </div>
+                    <div class="community-card team">
+                        <h4>Notre Équipe</h4>
+                        <div class="team-photos">
+                             <img src="assets/team-member-1.jpg" alt="Membre de l'équipe 1" style="width: 50px; height: 50px; background-color: #ccc; border-radius: 50%;" loading="lazy">
+                             <img src="assets/team-member-2.jpg" alt="Membre de l'équipe 2" style="width: 50px; height: 50px; background-color: #ccc; border-radius: 50%;" loading="lazy">
+                             <img src="assets/team-member-3.jpg" alt="Membre de l'équipe 3" style="width: 50px; height: 50px; background-color: #ccc; border-radius: 50%;" loading="lazy">
+                        </div>
+                        <a href="a-propos.html">Découvrir l'équipe</a>
+                    </div>
+                    <div class="community-card partners">
+                        <h4>Nos Partenaires</h4>
+                        <div class="partner-logos">
+                            <span style="padding: 10px; background: #ccc; border-radius: 5px;">LOGO 1</span>
+                            <span style="padding: 10px; background: #ccc; border-radius: 5px;">LOGO 2</span>
+                            <span style="padding: 10px; background: #ccc; border-radius: 5px;">LOGO 3</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="site-footer">
+                <div class="footer-container">
+                    <div class="footer-column">
+                        <h4>SELYN Business Center</h4>
+                        <p>Une transformation globale pour un succès durable.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="consulting.html">Conseil</a></li>
+                            <li><a href="hub.html">Hub</a></li>
+                            <li><a href="coworking.html">Space</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Ressources</h4>
+                        <ul>
+                            <li><a href="offres.html">Nos Offres</a></li>
+                            <li><a href="communaute.html">Communauté</a></li>
+                            <li><a href="a-propos.html">À Propos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contactez-nous</h4>
+                        <p>Email: contact@selyn.com</p>
+                        <p>Téléphone: +33 1 23 45 67 89</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 SELYN Business Center. Tous droits réservés.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/hero-animation.js"></script>
+</body>
+</html>
